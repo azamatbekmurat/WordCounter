@@ -1,0 +1,30 @@
+div #footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: blue;
+    text-align: center;
+}
+
+h4 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+form {
+  margin-top: 30px;
+}
+#submit {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.count {
+  color: green;
+  font-style: italic;
+  font-size: 25px;
+  text-decoration: underline;
+}

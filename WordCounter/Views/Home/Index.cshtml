@@ -1,0 +1,27 @@
+@{
+  Layout = "_Layout";
+}
+
+<div class="container">
+
+  <h4>This site will help you find number of word occurrences within given sentence.</h4>
+  <form action="/count" method="post">
+    <label for="input-word">Enter a word:</label>
+    <input type="text" name="input-word" id="input-word">
+
+    <label for="input-text">Enter a sentence:</label>
+    <input type="text" name="input-text" id="input-text">
+    <br>
+    <button id="submit" class="btn btn-primary btn-lg" type="submit">Show me the number of occurrences!</button>
+  </form>
+
+  <div id="output">
+    @if (Model != null)
+    {
+    <h4>Number of occurrences is: <span class="count">@Model</span></h4>
+    <h3><a href="/">Reset</a></h3>
+    }
+  </div>
+
+
+</div>
