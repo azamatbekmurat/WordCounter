@@ -5,16 +5,16 @@
 #### By _**Azamat Bekmuratov**_
 
 ## Description
-This web application is built with C# Asp Net Core MVC framework. The application where a user can enter a word and a text, and app finds entered word in a given text and gives a number of appearance of that word.
+This web application is built with C# Asp Net Core MVC framework. The application where a user can enter a word and a text, and app finds a number of occurrences of entered word in a given text.
 
 ## Specifications
 
 | Spec | Input | Output |
 | :------------- | :------------- | :------------- |
 | One Letter | Word: "a"; String: "a" | 1 |
-| Number input | Word: 1; String: "a"  | N/A |
 | Word found one time | Word: "apple"; String: "Big apple" | 1 |
 | Word found two times | Word: "apple"; String: "Big apple and red apple" | 2 |
+| Word where some letters capitalized | Word: "AppLe"; String: "Big apPLe and red aPpLE" | 2 |
 
 ## Setup/Installation Requirements
 
