@@ -12,16 +12,15 @@
     <label for="input-text">Enter a sentence:</label>
     <input type="text" name="input-text" id="input-text">
     <br>
-    <button id="submit" class="btn btn-primary btn-lg" type="submit">Show me the number of occurrences!</button>
+    <button id="submit" class="btn btn-primary btn-lg" type="submit">Result!</button>
   </form>
 
   <div id="output">
     @if (Model != null)
     {
-    <h4>Number of occurrences of <span class="countWord">@Model.GetWord()</span> is: <span class="count">@Model.GetCountNo()</span></h4>
+    <h4>Number of occurrences is: <span class="count">@Model</span></h4>
     <h3><a href="/">Reset</a></h3>
     }
   </div>
-
 
 </div>

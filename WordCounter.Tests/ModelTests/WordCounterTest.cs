@@ -14,7 +14,6 @@ namespace TheCounter.Tests
       RepeatCounter inputValues = new RepeatCounter("A", "a");
       int finalCount = inputValues.GetCount();
       Console.WriteLine(finalCount);
-
       Assert.AreEqual(1, finalCount);
     }
 

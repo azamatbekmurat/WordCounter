@@ -18,12 +18,8 @@ namespace TheCounter.Models
     {
       return _word;
     }
-    public int GetCountNo()
-    {
-      return _count;
-    }
 
-    public void GetCount()
+    public int GetCount()
     {
         string wordToLower = _word.ToLower();
         string textToLower = _text.ToLower();
@@ -34,7 +30,7 @@ namespace TheCounter.Models
             i += wordToLower.Length;
             _count++;
         }
-        // return count; //since GetCount() was changed from 'int' to 'void', 'return' was commented out
+        return _count;
     }
   }
 }
