@@ -7,25 +7,34 @@ namespace TheCounter.Models
   {
     private string _word;
     private string _text;
+    private int _count;
 
     public RepeatCounter(string inputWord, string inputText)
     {
       _word = inputWord;
       _text = inputText;
     }
+    public string GetWord()
+    {
+      return _word;
+    }
+    public int GetCountNo()
+    {
+      return _count;
+    }
 
-    public int GetCount()
+    public void GetCount()
     {
         string wordToLower = _word.ToLower();
         string textToLower = _text.ToLower();
-        int count = 0;
+        _count = 0;
         int i = 0;
         while ((i = textToLower.IndexOf(wordToLower, i)) != -1)
         {
             i += wordToLower.Length;
-            count++;
+            _count++;
         }
-        return count;
+        // return count; //since GetCount() was changed from 'int' to 'void', 'return' was commented out
     }
   }
 }
