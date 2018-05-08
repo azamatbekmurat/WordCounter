@@ -17,9 +17,8 @@ namespace TheCounter.Controllers
     public ActionResult Count()
     {
       RepeatCounter inputValues = new RepeatCounter(Request.Form["input-word"], Request.Form["input-text"]);
-      int finalCount = inputValues.GetCount();
-      Console.WriteLine(finalCount);
-      return View("Index", finalCount);
+      inputValues.GetCount();  
+      return View("Index", inputValues);
     }
 
   }

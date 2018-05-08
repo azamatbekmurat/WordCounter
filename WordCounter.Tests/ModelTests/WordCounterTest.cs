@@ -12,59 +12,44 @@ namespace TheCounter.Tests
     public void CountOneLetterWithinOneLetterText()
     {
       RepeatCounter inputValues = new RepeatCounter("A", "a");
-      int finalCount = inputValues.GetCount();
-      Console.WriteLine(finalCount);
-      Assert.AreEqual(1, finalCount);
+      Console.WriteLine(inputValues.GetCount());
+
+      Assert.AreEqual(1, inputValues.GetCount());
     }
 
     [TestMethod]
-    public void CountOneLetterWithinText()
+    public void CountTwoLettersWithinText()
     {
-      RepeatCounter inputValues = new RepeatCounter("A", "Read application");
-      int finalCount = inputValues.GetCount();
-      Console.WriteLine(finalCount);
+      RepeatCounter inputValues = new RepeatCounter("Re", "Read application");
+      Console.WriteLine(inputValues.GetCount());
 
-      Assert.AreEqual(3, finalCount);
+      Assert.AreEqual(0, inputValues.GetCount());
     }
 
     [TestMethod]
-    public void CountOneWordApple()
+    public void CountOneWord_Apple()
     {
       RepeatCounter inputValues = new RepeatCounter("apple", "big apple");
-      int finalCount = inputValues.GetCount();
-      Console.WriteLine(finalCount);
+      Console.WriteLine(inputValues.GetCount());
 
-      Assert.AreEqual(1, finalCount);
+      Assert.AreEqual(1, inputValues.GetCount());
     }
 
     [TestMethod]
-    public void CountTwoWordsInStringApple()
-    {
-      RepeatCounter inputValues = new RepeatCounter("apple", "big apple, and red apple");
-      int finalCount = inputValues.GetCount();
-      Console.WriteLine(finalCount);
-
-      Assert.AreEqual(2, finalCount);
-    }
-
-    [TestMethod]
-    public void CountWordWithUpperCaseInInputWordApple()
-    {
-      RepeatCounter inputValues = new RepeatCounter("Apple", "big apple, and red apple");
-      int finalCount = inputValues.GetCount();
-      Console.WriteLine(finalCount);
-
-      Assert.AreEqual(2, finalCount);
-    }
-
-    [TestMethod]
-    public void CountWordWithVariousCasesInStringApple()
+    public void CountWordWithVariousCasesInString_Apple()
     {
       RepeatCounter inputValues = new RepeatCounter("AppLE", "big aPplE, and red aPPLe, and ripe aPpLe");
-      int finalCount = inputValues.GetCount();
-      Console.WriteLine(finalCount);
+      Console.WriteLine(inputValues.GetCount());
 
-      Assert.AreEqual(3, finalCount);
+      Assert.AreEqual(3, inputValues.GetCount());
+    }
+
+    [TestMethod]
+    public void IsThereAWord_False()
+    {
+      RepeatCounter inputValues = new RepeatCounter("24", "Big apple 24");
+      Console.WriteLine(inputValues.IsThereAWord());
+      Assert.AreEqual(false, inputValues.IsThereAWord());
     }
 
   }

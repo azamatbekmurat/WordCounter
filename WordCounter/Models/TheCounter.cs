@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System;
+using System.Text.RegularExpressions;
 
 namespace TheCounter.Models
 {
@@ -23,14 +24,34 @@ namespace TheCounter.Models
     {
         string wordToLower = _word.ToLower();
         string textToLower = _text.ToLower();
+        char[] delimiterChars = { ' ', ',', '.', ':', '\t' };
+        string[] wordsFromText = textToLower.Split(delimiterChars);
         _count = 0;
-        int i = 0;
-        while ((i = textToLower.IndexOf(wordToLower, i)) != -1)
+        for (int i = 0; i < wordsFromText.Length; i++)
         {
-            i += wordToLower.Length;
+          if (wordToLower == wordsFromText[i])
+          {
             _count++;
+          }
         }
         return _count;
+        //Previous version without splitter
+        // int i = 0;
+        // while ((i = textToLower.IndexOf(wordToLower, i)) != -1)
+        // {
+        //     i += wordToLower.Length;
+        //     _count++;
+        // }
+
     }
+    public bool IsThereAWord()
+    {
+      if (Regex.IsMatch(_word, "^(?=.*[a-z])"))
+      {
+          return true;
+      }
+      return false;
+    }
+
   }
 }

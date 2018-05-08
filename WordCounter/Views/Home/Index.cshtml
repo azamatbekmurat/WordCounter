@@ -18,8 +18,23 @@
   <div id="output">
     @if (Model != null)
     {
-    <h4>Number of occurrences is: <span class="count">@Model</span></h4>
-    <h3><a href="/">Reset</a></h3>
+      @if (!Model.IsThereAWord())
+      {
+        <h4>Input for looking word should be alphabetic!</h4>
+      }
+      else if (Model.GetCount() == 0)
+      {
+        <h4>Number of occurrences of <span id="countWord">'@Model.GetWord()'</span> in a given sentence is: <span class="count">@Model.GetCount()</span></h4>
+      }
+      else if (Model.GetCount() == 1)
+      {
+        <h4>Number of occurrences of <span id="countWord">'@Model.GetWord()'</span> in a given sentence is: <span class="count">@Model.GetCount()</span></h4>
+      }
+      else if (Model.GetCount() > 1)
+      {
+        <h4>Number of occurrences of <span id="countWord">'@Model.GetWord()'</span> in a given sentence are: <span class="count">@Model.GetCount()</span></h4>
+      }
+      <h3><a href="/">Reset</a></h3>
     }
   </div>
 

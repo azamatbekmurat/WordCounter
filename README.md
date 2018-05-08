@@ -12,6 +12,8 @@ This web application is built with C# Asp Net Core MVC framework. The applicatio
 | Spec | Input | Output |
 | :------------- | :------------- | :------------- |
 | One Letter | Word: "a"; String: "a" | 1 |
+| One Letter | Word: "a"; String: "Big apple, and red apple" | 0 |
+| Input word is not alphabetic | Word: "24"; String: "Big apple, and red apple 24" | Input should be alphabetic |
 | Word found one time | Word: "apple"; String: "Big apple" | 1 |
 | Word found two times | Word: "apple"; String: "Big apple and red apple" | 2 |
 | Word where some letters capitalized | Word: "AppLe"; String: "Big apPLe and red aPpLE" | 2 |
